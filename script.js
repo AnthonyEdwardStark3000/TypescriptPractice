@@ -1,15 +1,24 @@
-dummydata: undefined;
-var simple;
-// let simple;
-simple = add;
-// simple=100; weakness of TS
-function add(n1, n2) {
-    return n1 + n2;
+var userinputdata;
+userinputdata = 100;
+// console.log(userinputdata);
+userinputdata = "Random name";
+// console.log(userinputdata);
+usrname: String;
+if (typeof userinputdata == 'string') {
+    this.usrname = userinputdata;
+    console.log("Assigned with name:" + this.usrname);
 }
-function printdata(number2) {
-    console.log("The answer is:" + number2);
+// error
+//this function just return "never" data type
+function myOwnError(m, c) {
+    // console.log("An error of"+m+"with code "+c+" has occoured");
+    // throw{m,c}; //this is the function code that provides error
+    // infinite loop
+    while (true) {
+        console.log("one");
+    }
 }
-printdata(add(10, 20));
-console.log("result of result:" + printdata(add(10, 20)));
-console.log(add(10, 30));
-console.log(simple(2000, 1000));
+var nevervalueCheck = myOwnError("created error", 300);
+console.log("Checking the return type of my created error");
+console.log(typeof (nevervalueCheck));
+console.log(nevervalueCheck);
